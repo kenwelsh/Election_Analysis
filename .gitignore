@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# files in Election_Analysis to ignore
+
+Python_practice.py
+
