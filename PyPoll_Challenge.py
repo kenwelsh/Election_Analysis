@@ -1,11 +1,11 @@
-# Add our dependencies.
+# Add dependencies.
 import csv
 import os
 
-# Assign a variable to load a file from a path.
+# Assign a variable to load election results file from a path.
 file_to_load = os.path.join("Resources/election_results.csv")
 
-# Assign a variable to save the file to a path.
+# Assign a variable to save the output file to a path.
 file_to_save = os.path.join("Analysis", "election_analysis.txt")
 
 # Initialize a total vote counter.
@@ -19,12 +19,13 @@ candidate_votes = {}
 county_options = []
 county_votes = {}
 
-# Track the winning candidate, vote count, and percentage.
+# Declare variables to track the winning candidate,
+# vote count, and percentage.
 winning_candidate = ""
 winning_count = 0
 winning_percentage = 0
 
-# Track the county with the largest turnout.
+# Declare variables to track the county with the largest turnout.
 top_county_turnout = ""
 largest_count = 0
 
@@ -36,7 +37,7 @@ with open(file_to_load) as election_data:
     # Read the header row.
     headers = next(file_reader)
     
-    # Print each row in the CSV file.
+    # Cycle through each row in the CSV file.
     for row in file_reader:
         
         # Add to the total vote count.
@@ -100,7 +101,7 @@ with open(file_to_save, "w") as txt_file:
         # Print each county's voter count and percentage to the terminal.
         print(county_results)
         
-        #  Save the candidate results to the text file.
+        #  Save the county results to the text file.
         txt_file.write(county_results)
         
         # Determine largest vote count for the counties.
